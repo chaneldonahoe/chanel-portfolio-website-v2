@@ -1,21 +1,21 @@
-import React from 'react'
 
 
-const NavigationDots = ({ active }) => {
-  return (
-    <div className='app__navigation'>
-      {['home', 'about', 'work', 'skills', 'testimonials', 'contact'].map((item, index) => (
-        <li key={item}>
-          <a
-            href={`#${item}`}
-            key={item + index}
-            className='app__navigation-dot'
-            style={active === item ? { backgroundColor: '#313BAC' } : {}}
-          />
-        </li>
-      ))}
-    </div>
-  )
-}
+/* eslint-disable jsx-a11y/control-has-associated-label */
+/* eslint-disable jsx-a11y/anchor-has-content */
 
-export default NavigationDots
+import React from 'react';
+
+const NavigationDots = ({ active }) => (
+  <div className="app__navigation">
+    {['home', 'about', 'work', 'skills', 'testimonial', 'contact'].map((item, index) => (
+      <a
+        href={`#${item}`}
+        key={item + index}
+        className="app__navigation-dot"
+        style={active === item ? { backgroundColor: '#313BAC' } : {}}
+      />
+    ))}
+  </div>
+);
+
+export default NavigationDots;

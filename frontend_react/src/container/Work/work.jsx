@@ -7,16 +7,16 @@ import { urlFor, client } from '../../client';
 import './work.scss';
 
 const Work = () => {
-  const [works, setWorks] = useState([]);
+  const [projects, setProjects] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
   useEffect(() => {
-    const query = '*[_type == "works"]';
+    const query = '*[_type == "projects"]';
 
     client.fetch(query).then((data) => {
-      setWorks(data);
+      setProjects(data);
       setFilterWork(data);
     });
   }, []);
@@ -29,17 +29,17 @@ const Work = () => {
       setAnimateCard([{ y: 0, opacity: 1 }]);
 
       if (item === 'All') {
-        setFilterWork(works);
+        setFilterWork(projects);
       } else {
-        setFilterWork(works.filter((work) => work.tags.includes(item)));
+        setFilterWork(projects.filter((project) => project.tags.includes(item)));
       }
     }, 500);
   };
 
   return (
     <>
-      <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
 
+      <h2 className="head-text">My <span>Portfolio</span></h2>
       <div className="app__work-filter">
         {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
           <div
