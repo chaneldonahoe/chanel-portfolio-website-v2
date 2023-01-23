@@ -8,3 +8,10 @@
 // To run React
 - cd frontend_react
 - npm start
+
+
+// TO DO 
+- Check what App Wrap does
+- Higher Order Functions - 
+- Change padding at the top of each section (it is too big at the moment)
+- fix dynamicness 
