@@ -8,4 +8,4 @@ const testimonials = () => {
   )
 }
 
-export default testimonials
+// export default testimonials
