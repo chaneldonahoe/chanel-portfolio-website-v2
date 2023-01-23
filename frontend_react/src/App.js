@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { About, Footer, Header, Skills, Testimonials, Work } from './container';
+import { About, Footer, Header, Experience, Project } from './container';
 import { Navbar } from './components';
 import './App.scss'
 
-// work Experience
-// projects
+// work Experience - within skills section
+//  Testimonials - removed
 
 const App = () => {
   return (
@@ -13,9 +13,9 @@ const App = () => {
       <Navbar />
       <Header />
       <About />
-      <Work />
-      <Skills />
-      <Testimonials />
+      <Project />
+      <Experience />
+      {/* <Testimonials /> */}
       <Footer />
     </div>
   )
