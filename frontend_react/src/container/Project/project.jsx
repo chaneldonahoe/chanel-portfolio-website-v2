@@ -13,7 +13,7 @@ const Project = () => {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
   useEffect(() => {
-    const query = '*[_type == "projects"]';
+    const query = '*[_type == "project"]';
 
     client.fetch(query).then((data) => {
       setProjects(data);
@@ -21,7 +21,7 @@ const Project = () => {
     });
   }, []);
 
-  const handleWorkFilter = (item) => {
+  const handleProjectFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard([{ y: 100, opacity: 0 }]);
 
@@ -38,13 +38,13 @@ const Project = () => {
 
   return (
     <>
+      <h2 className="head-text">My <span>Portfolio</span> Section</h2>
 
-      <h2 className="head-text">My <span>Portfolio</span></h2>
       <div className="app__work-filter">
-        {['All', 'Web App', 'Mobile App', 'React JS', 'Web 3'].map((item, index) => (
+        {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
           <div
             key={index}
-            onClick={() => handleWorkFilter(item)}
+            onClick={() => handleProjectFilter(item)}
             className={`app__work-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
           >
             {item}
@@ -108,4 +108,8 @@ const Project = () => {
   );
 };
 
-export default AppWrap(Project, 'project')
+export default AppWrap(
+  MotionWrap(Project, 'app__works'),
+  'work',
+  'app__primarybg',
+);
