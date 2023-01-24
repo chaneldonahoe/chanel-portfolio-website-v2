@@ -55,26 +55,26 @@ const Experience = () => {
                 <p className="bold-text">{experience.year}</p>
               </div>
               <motion.div className="app__skills-exp-works">
-                {experience.works.map((work) => (
+                {experience.works.map((experience) => (
                   <>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
                       className="app__skills-exp-work"
                       data-tip
-                      data-for={work.name}
-                      key={work.name}
+                      data-for={experience.name}
+                      key={experience.name}
                     >
-                      <h4 className="bold-text">{work.name}</h4>
-                      <p className="p-text">{work.company}</p>
+                      <h4 className="bold-text">{experience.name}</h4>
+                      <p className="p-text">{experience.company}</p>
                     </motion.div>
                     <ReactTooltip
-                      id={work.name}
+                      id={experience.name}
                       effect="solid"
                       arrowColor="#fff"
                       className="skills-tooltip"
                     >
-                      {work.desc}
+                      {experience.desc}
                     </ReactTooltip>
                   </>
                 ))}
@@ -89,5 +89,5 @@ const Experience = () => {
 
 export default AppWrap(
   MotionWrap(Experience, 'app__skills'),
-  'skills',
-  "app__whitebg")
+  'experience',
+  "app__primarybg")

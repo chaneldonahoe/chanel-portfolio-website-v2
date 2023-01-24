@@ -18,10 +18,13 @@
 
 // TO DO 
 - Change padding at the top of each section (it is too big at the moment)
-- fix dynamicness 
+- fix media screen  
 - fix skills and experience order (with list of experience in year order)
-- replace github with proper github in the social media section (github, linked in links)
 - fix navbar change skills to experience and link correctly 
+- fix project 
+
+//experience - resume 
+// work - projects 
 
 // stretch
 - make site more secure 
