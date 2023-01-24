@@ -25,4 +25,4 @@
 - add authentication to contact form
   - make sure the email is an actual email 
   - add max length in the contact form 
-- add tokens as secrets
+- add tokens as secrets in the code base
