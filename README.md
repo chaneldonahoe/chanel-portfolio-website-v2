@@ -24,7 +24,7 @@
 - fix navbar change skills to experience and link correctly 
 - Change mobile icon to linked in image in footer 
 - linkedin and email links open new tab, not reload current tab 
-- fix logo in the tav 
+- fix logo in the tab
 
 
 
