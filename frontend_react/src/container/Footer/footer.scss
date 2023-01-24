@@ -20,12 +20,12 @@
     min-width: 290px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: space-evenly;
 
     margin: 1rem 0;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 50px;
     cursor: pointer;
     background-color: #fef4f5;
 

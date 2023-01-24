@@ -23,7 +23,6 @@
 - replace github with proper github in the social media section (github, linked in links)
 - fix navbar change skills to experience and link correctly 
 - Change mobile icon to linked in image in footer 
-- linkedin and email links open new tab, not reload current tab 
 
 
 // stretch

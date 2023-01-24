@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
@@ -45,7 +44,7 @@ const Footer = () => {
           <a href="mailto:cdonahoe05@gmail.com" className="p-text">cdonahoe05@gmail.com</a>
         </div>
         <div className="app__footer-card">
-          <img src={images.mobile} alt="linkedin" />
+          <img src={images.linkedin} alt="linkedin" />
           <a href="https://www.linkedin.com/in/chanel-donahoe/" className="p-text">Linkedin</a>
         </div>
       </div>
