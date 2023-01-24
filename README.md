@@ -19,8 +19,6 @@
 // TO DO 
 - Change padding at the top of each section (it is too big at the moment)
 - fix media screen  
-- fix skills and experience order (with list of experience in year order)
-- fix project 
 
 // stretch
 - make site more secure 
