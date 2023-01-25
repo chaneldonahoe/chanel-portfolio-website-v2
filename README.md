@@ -24,3 +24,4 @@ To create production build of the applications
   - make sure the email is an actual email 
   - add max length in the contact form 
 - add tokens as secrets in the code base
+- continuous integration into netlify
