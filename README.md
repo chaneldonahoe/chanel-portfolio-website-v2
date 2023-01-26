@@ -25,3 +25,4 @@ To create production build of the applications
   - add max length in the contact form 
 - add tokens as secrets in the code base
 - continuous integration into netlify
+- remove DS store
