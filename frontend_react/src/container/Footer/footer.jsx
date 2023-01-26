@@ -8,8 +8,28 @@ const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-
   const { username, email, message } = formData;
+  const [valid, setValid] = useState(true)
+
+  const validateEmail = (value) => {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+      setValid(true)
+      return console.log(`valid email | value = ${value} | emailValid = ${valid}`)
+    } else {
+      setValid(false)
+      return console.log(`invalid email | value = ${value} | emailValid = ${valid}`)
+    }
+  }
+
+  const submitClient = (value) => {
+    console.log(`yay - submitted to sanity ${value}`)
+    // client.create(value)
+    //   .then(() => {
+    //     setLoading(false);
+    //     setIsFormSubmitted(true);
+    //   })
+    //   .catch((err) => console.log(err));
+  }
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -26,12 +46,20 @@ const Footer = () => {
       message: formData.message,
     };
 
-    client.create(contact)
-      .then(() => {
-        setLoading(false);
-        setIsFormSubmitted(true);
-      })
-      .catch((err) => console.log(err));
+    validateEmail(contact.email)
+
+    // if () {
+    //   console.log(`validate email is fals so cannot submit`)
+    //   return
+    // } else if (true) {
+    //   return
+    // } else {
+    //   submitClient(contact);
+    // }
+
+
+
+
   };
 
   return (
@@ -56,6 +84,9 @@ const Footer = () => {
           <div className="app__flex">
             <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
           </div>
+          {valid ? "" : <p className='invalidError'>*invalid email</p>}
+
+
           <div>
             <textarea
               className="p-text"
