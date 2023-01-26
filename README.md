@@ -19,8 +19,6 @@ To create production build of the applications
 
 // TO DO 
 - add tokens as secrets in the code base
-- remove DS store
-
 
 - add authentication to contact form
   - make sure the email is an actual email 
