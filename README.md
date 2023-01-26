@@ -32,3 +32,6 @@ To create production build of the applications
 
 - Change padding at the top of each section (it is too big at the moment)
 - fix media screen  
+
+
+- jazz up read me
