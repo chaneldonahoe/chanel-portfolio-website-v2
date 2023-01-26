@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'chanel-website-v2',
 
-  projectId: '83vjm4eo',
+  projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
