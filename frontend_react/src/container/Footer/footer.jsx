@@ -9,20 +9,28 @@ const Footer = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const { username, email, message } = formData;
-  const [valid, setValid] = useState(true)
+  const [validEmail, setValidEmail] = useState(true)
 
   const validateEmail = (value) => {
+    console.log(`2 - validEmail state: ${validEmail}`)
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
-      setValid(true)
-      return console.log(`valid email | value = ${value} | emailValid = ${valid}`)
-    } else {
-      setValid(false)
-      return console.log(`invalid email | value = ${value} | emailValid = ${valid}`)
+      setValidEmail(true);
+      console.log('email is valid')
+      console.log(`3 - validEmail state: ${validEmail}`)
+
+      return
     }
+    setValidEmail(false);
+    console.log('email is not valid')
+    console.log(`4 - validEmail state: ${validEmail}`)
+
+    return
   }
 
   const submitClient = (value) => {
     console.log(`yay - submitted to sanity ${value}`)
+    setIsFormSubmitted(true);
+
     // client.create(value)
     //   .then(() => {
     //     setLoading(false);
@@ -46,19 +54,13 @@ const Footer = () => {
       message: formData.message,
     };
 
+    console.log(`1 - validEmail state: ${validEmail}`)
+
     validateEmail(contact.email)
-
-    // if () {
-    //   console.log(`validate email is fals so cannot submit`)
-    //   return
-    // } else if (true) {
-    //   return
-    // } else {
-    //   submitClient(contact);
-    // }
+    console.log(`5 - validEmail state: ${validEmail}`)
 
 
-
+    // submitClient(contact);
 
   };
 
@@ -84,7 +86,7 @@ const Footer = () => {
           <div className="app__flex">
             <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
           </div>
-          {valid ? "" : <p className='invalidError'>*invalid email</p>}
+          {validEmail ? "" : <p className='invalidError'>*invalid email</p>}
 
 
           <div>
