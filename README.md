@@ -18,11 +18,17 @@ To create production build of the applications
 - Higher Order Functions - 
 
 // TO DO 
-- Change padding at the top of each section (it is too big at the moment)
-- fix media screen  
+- add tokens as secrets in the code base
+- remove DS store
+
+
 - add authentication to contact form
   - make sure the email is an actual email 
   - add max length in the contact form 
-- add tokens as secrets in the code base
+
+
 - continuous integration into netlify
-- remove DS store
+
+
+- Change padding at the top of each section (it is too big at the moment)
+- fix media screen  
