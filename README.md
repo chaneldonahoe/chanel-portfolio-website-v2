@@ -24,6 +24,9 @@ To create production build of the applications
   - make sure the email is an actual email 
   - add max length in the contact form 
 
+- fix work experience ordering
+
+- add proper desc to work experience
 
 - continuous integration into netlify
 
