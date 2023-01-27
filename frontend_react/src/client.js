@@ -3,11 +3,11 @@ import imageUrlBuilder from '@sanity/image-url';
 
 
 export const client = sanityClient({
-  projectId: 'skzSjlZsLydFLZ3ksxsXMEms7BeV7buuQTC6ixOGZZxcFQdu0RDbxfB1vvfJWyFykGrtS55httHryZCN7FqjoJtt8s1sq4BoR94tdxRRV4Yj4NGOLzXQMkcxdkaI1yeAJJG5kKtvmi0TtPE2LZIPXo8KMvIi5CWWtUWVjqsvrdPypAt9TWIl',
+  projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
   dataset: 'production',
   apiVersion: '2022-02-01',
   useCdm: true,
-  token: '83vjm4eo',
+  token: process.env.REACT_APP_SANITY_TOKEN,
 });
 
 const builder = imageUrlBuilder(client);
