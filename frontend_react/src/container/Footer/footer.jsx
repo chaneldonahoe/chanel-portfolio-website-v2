@@ -10,28 +10,22 @@ const Footer = () => {
   const [loading, setLoading] = useState(false);
   const { username, email, message } = formData;
   const [validEmail, setValidEmail] = useState(true)
+  const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
-  const validateEmail = (value) => {
-    console.log(`2 - validEmail state: ${validEmail}`)
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+
+  const validateEmail = (email) => {
+    if (regex.test(email)) {
       setValidEmail(true);
-      console.log('email is valid')
-      console.log(`3 - validEmail state: ${validEmail}`)
-
-      return
+      return true;
     }
     setValidEmail(false);
-    console.log('email is not valid')
-    console.log(`4 - validEmail state: ${validEmail}`)
-
-    return
+    setLoading(false);
+    return false;
   }
 
-  const submitClient = (value) => {
-    console.log(`yay - submitted to sanity ${value}`)
-    setIsFormSubmitted(true);
-
-    // client.create(value)
+  const submitClient = (contact) => {
+    alert('Successfully submitted')
+    // client.create(contact)
     //   .then(() => {
     //     setLoading(false);
     //     setIsFormSubmitted(true);
@@ -54,14 +48,9 @@ const Footer = () => {
       message: formData.message,
     };
 
-    console.log(`1 - validEmail state: ${validEmail}`)
-
-    validateEmail(contact.email)
-    console.log(`5 - validEmail state: ${validEmail}`)
-
-
-    // submitClient(contact);
-
+    if (validateEmail(contact.email)) {
+      submitClient(contact)
+    }
   };
 
   return (
@@ -86,9 +75,7 @@ const Footer = () => {
           <div className="app__flex">
             <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
           </div>
-          {validEmail ? "" : <p className='invalidError'>*invalid email</p>}
-
-
+          {validEmail ? "" : <p className='invalidError'>Oohps! That looks like an invalid email.</p>}
           <div>
             <textarea
               className="p-text"
