@@ -1,4 +1,5 @@
 # chanel-portfolio-website-v2
+You can view the production build [here](https://jellynelly.netlify.app/). 
 
 ## Local Development
 
@@ -22,8 +23,7 @@ npm run build
 Then, drag the build file into netlify for a manual deployment 
 
 
-## Future Feature Iteratin 
+## Future Feature Iteration 
 - Continuous integration into netlify (possiblly need to add secrets)
 
 
-You can view the production build [here](https://jellynelly.netlify.app/). 
