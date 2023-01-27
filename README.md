@@ -18,12 +18,8 @@ To create production build of the applications
 - Higher Order Functions - 
 
 // TO DO 
-- Change padding at the top of each section (it is too big at the moment)
 - fix media screen  
-
-
 - jazz up read me
-
 
 Future Iterations:
 - - continuous integration into netlify (possiblly need to add secrets)
