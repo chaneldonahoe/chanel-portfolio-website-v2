@@ -8,10 +8,11 @@ const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [validEmail, setValidEmail] = useState(true);
+  const [validName, setValidName] = useState(true);
+  const [validMessage, setValidMessage] = useState(true);
   const { username, email, message } = formData;
-  const [validEmail, setValidEmail] = useState(true)
-  const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-
+  const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   const validateEmail = (email) => {
     if (regex.test(email)) {
@@ -23,15 +24,34 @@ const Footer = () => {
     return false;
   }
 
-  const submitClient = (contact) => {
-    alert('Successfully submitted')
-    // client.create(contact)
-    //   .then(() => {
-    //     setLoading(false);
-    //     setIsFormSubmitted(true);
-    //   })
-    //   .catch((err) => console.log(err));
+  const validateName = (name) => {
+    if (name !== undefined) {
+      setValidName(true);
+      return true;
+    }
+    setValidName(false);
+    setLoading(false);
+    return false;
   }
+
+  const validateMessage = (msg) => {
+    if (msg !== "") {
+      setValidMessage(true);
+      return true;
+    }
+    setValidMessage(false);
+    setLoading(false);
+    return false;
+  }
+
+  const submitClient = (contact) => {
+    client.create(contact)
+      .then(() => {
+        setLoading(false);
+        setIsFormSubmitted(true);
+      })
+      .catch((err) => console.log(err));
+  };
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -48,9 +68,13 @@ const Footer = () => {
       message: formData.message,
     };
 
-    if (validateEmail(contact.email)) {
-      submitClient(contact)
-    }
+    validateMessage(contact.message);
+    validateEmail(contact.email);
+    validateName(contact.name);
+
+    if (validateEmail(contact.email) && validateName(contact.name) && validateMessage(contact.message)) {
+      submitClient(contact);
+    };
   };
 
   return (
@@ -69,13 +93,15 @@ const Footer = () => {
       </div>
       {!isFormSubmitted ? (
         <div className="app__footer-form app__flex">
+          {validName ? "" : <p className='invalidError'>❌ Oohps! Looks like you forgot your name  </p>}
           <div className="app__flex">
             <input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
           </div>
+          {validEmail ? "" : <p className='invalidError'> ❌ Oohps! That looks like an invalid email.</p>}
           <div className="app__flex">
             <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
           </div>
-          {validEmail ? "" : <p className='invalidError'>Oohps! That looks like an invalid email.</p>}
+          {validMessage ? "" : <p className='invalidError'> ❌ What is your message?</p>}
           <div>
             <textarea
               className="p-text"
