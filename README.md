@@ -1,25 +1,29 @@
 # chanel-portfolio-website-v2
 
-// To run sanity locally 
-- cd backend_sanity
-- npm run dev 
+## Local Development
 
-// To run React
-- cd frontend_react
-- npm start
+### Running Sanity Locally 
+```
+cd backend_sanity
+npm run dev 
+```
 
-To create production build of the applications
-// cd frontend_react
-// npm run build 
-//drag build file into netlify
+### Running REACT Locally 
+```
+cd frontend_react
+npm start
+```
 
-// EXTRA STUDY 
-- Check what App Wrap does
-- Higher Order Functions - 
+### Create Production build of the applications 
+```
+cd frontend_react
+npm run build 
+```
+Then, drag the build file into netlify for a manual deployment 
 
-// TO DO 
-- fix media screen  
-- jazz up read me
 
-Future Iterations:
-- - continuous integration into netlify (possiblly need to add secrets)
+## Future Feature Iteratin 
+- Continuous integration into netlify (possiblly need to add secrets)
+
+
+You can view the production build [here](https://jellynelly.netlify.app/). 
