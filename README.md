@@ -18,16 +18,11 @@ To create production build of the applications
 - Higher Order Functions - 
 
 // TO DO 
-- add authentication to contact form
-  - make sure the email is an actual email 
-  - add max length in the contact form 
-
 - fix work experience ordering
 
 - add proper desc to work experience
 
 - continuous integration into netlify (possiblly need to add secrets)
-
 
 - Change padding at the top of each section (it is too big at the moment)
 - fix media screen  
