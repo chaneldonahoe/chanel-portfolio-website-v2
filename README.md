@@ -25,5 +25,10 @@ Then, drag the build file into netlify for a manual deployment
 
 ## Future Feature Iteration 
 - Continuous integration into netlify (possiblly need to add secrets)
+- Add Solidity & web 3  & third web to skills 
+- Expand on Experience Section - more info around other roles and experience 
+- Add a blurb (stuff liek career change and aspirations)
+- links open up new tabs 
+- add a blog section (youtube, medium, etc)
 
 
