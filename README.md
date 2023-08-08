@@ -32,3 +32,4 @@ Then, drag the build file into netlify for a manual deployment
 - add a blog section (youtube, medium, etc)
 
 
+** Make sure to npm install if downloading it from github to remote 
